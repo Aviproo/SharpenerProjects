@@ -6,3 +6,9 @@ header.textContent = "Hello world";
 mainheader.style.border = "3px solid black";
 title.style.fontStyle = "bold";
 title.style.color = "green";
+let items = document.getElementsByClassName("list-group-item");
+
+for (let i = 0; i < items.length; i++) {
+  items[i].style.fontWeight = "bold";
+  items[i].style.backgroundColor = "green";
+}
