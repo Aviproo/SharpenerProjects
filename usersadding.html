@@ -30,6 +30,16 @@
         newli.append(`${name}-${email}-${number}`);
         newul.appendChild(newli);
         document.querySelector("body").appendChild(newul);
+        let dlt = document.createElement("Button");
+        let txt = document.createTextNode("Delete");
+        dlt.append(txt);
+        dlt.className = "delete";
+        newli.appendChild(dlt);
+        document.querySelector(".delete").addEventListener("click", deleteli);
+        function deleteli() {
+          localStorage.removeItem(email);
+          newli.remove();
+        }
       }
     </script>
   </body>
