@@ -114,9 +114,13 @@
           msg.innerHTML = "Plaese enter all field";
         } else {
           console.log("Form submitted");
+          let obj = {
+            name: name.value,
+            email: email.value,
+          };
           console.log(name.value, email.value);
-          localStorage.setItem("Name", name.value);
-          localStorage.setItem("Email", email.value);
+          let objsone = JSON.stringify(obj);
+          localStorage.setItem("Details", objsone);
         }
         console.log("button was clicked");
       });
