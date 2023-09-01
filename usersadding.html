@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users Details</title>
+  </head>
+  <body>
+    Name: <input type="text" class="name" /> Email:
+    <input type="email" class="email" /> Number:
+    <input type="text" class="number" /> <button class="submit">Submit</button>
+
+    <script>
+      let submit = document.querySelector(".submit");
+      submit.addEventListener("click", detail);
+      function detail(e) {
+        let name = document.querySelector(".name").value;
+        let email = document.querySelector(".email").value;
+        let number = document.querySelector(".number").value;
+
+        let obj = {
+          name: name,
+          emial: email,
+          number: number,
+        };
+        let detailjson = JSON.stringify(obj);
+        localStorage.setItem(email, detailjson);
+        let newul = document.createElement("ul");
+        let newli = document.createElement("li");
+        newli.append(`${name}-${email}-${number}`);
+        newul.appendChild(newli);
+        document.querySelector("body").appendChild(newul);
+      }
+    </script>
+  </body>
+</html>
